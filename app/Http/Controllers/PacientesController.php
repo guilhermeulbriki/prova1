@@ -130,4 +130,17 @@ class PacientesController extends Controller
 
       return redirect('pacientes');
     }
+
+    public function relatorio(Request $request) {
+      $pacientes = Pacientes::all();
+      $selectedPaciente = Pacientes::find($request->id);
+
+      if (isset($selectedPaciente->consultas)) {
+        $consultas = $selectedPaciente->consultas;
+      } else {
+        $consultas = null;
+      }
+
+      return view('relatorios/pacientes', compact('pacientes', 'consultas'));
+    }
 }

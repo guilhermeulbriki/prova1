@@ -16,7 +16,8 @@
         <a href="/medicos" class="nav-item nav-link">Médicos</a>
         <a href="/pacientes" class="nav-item nav-link">Pacientes</a>
         <a href="/consultas" class="nav-item nav-link">Consultas</a>
-        <a href="/Relatórios" class="nav-item nav-link">Relatórios</a>
+        <a href="/relatorios/medicos" class="nav-item nav-link">Relatório - Médico</a>
+        <a href="/relatorios/pacientes" class="nav-item nav-link">Relatório - Paciente</a>
       </div>
     </div>
   </nav>

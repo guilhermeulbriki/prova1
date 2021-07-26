@@ -130,4 +130,17 @@ class MedicosController extends Controller
 
       return redirect('medicos');
     }
+
+    public function relatorio(Request $request) {
+      $medicos = Medicos::all();
+      $selectedMedico = Medicos::find($request->id);
+
+      if (isset($selectedMedico->consultas)) {
+        $consultas = $selectedMedico->consultas;
+      } else {
+        $consultas = null;
+      }
+
+      return view('relatorios/medicos', compact('medicos', 'consultas'));
+    }
 }
