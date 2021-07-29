@@ -4,6 +4,28 @@
   @endsection()
 
   @section('conteudo')
+    <table class="table table-striped mt-5">
+      <tr>
+        <td>Nome</td>
+        <td>CPF</td>
+        <td>E-mail</td>
+        <td>Telefone</td>
+        <td>Endereço</td>
+        <td>Idade</td>
+      </tr>
+
+      @foreach ($pacientes as $paciente)
+        <tr>
+          <td>{{ $paciente->nome }}</td>
+          <td>{{ $paciente->cpf }}</td>
+          <td>{{ $paciente->email }}</td>
+          <td>{{ $paciente->telefone }}</td>
+          <td>{{ $paciente->endereco }}</td>
+          <td>{{ $paciente->idade }}</td>
+        </tr>
+      @endforeach
+    </table>
+
     <form action="{{ url('relatorios/pacientes') }}">
       <label class="form-group mt-4">Escolha o Paciente</label>
       <select name="id" class="form-select mt-2">
